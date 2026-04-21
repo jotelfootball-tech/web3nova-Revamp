@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, GraduationCap, MapPin, Phone, Twitter, Sparkles, Send } from "lucide-react";
 import BackgroundEffects from "../Services/BackgroundEffects";
+import { useRouter } from "next/router";
 
 const InternshipPage = () => {
+  const router = useRouter();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -116,7 +118,7 @@ const InternshipPage = () => {
               style={{
                 boxShadow: "0 10px 30px rgba(46, 123, 209, 0.3)",
               }}
-              onClick={() => window.open('tel:07043314162', '_blank')}
+              onClick={() => router.push('/internship/apply')}
             >
               Apply Now
             </button>
@@ -255,7 +257,7 @@ const InternshipPage = () => {
               className="mt-12 px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-2xl font-bold text-lg hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all flex items-center gap-2 group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('tel:07043314162', '_blank')}
+              onClick={() => router.push('/internship/apply')}
             >
               Apply Now
             </motion.button>
